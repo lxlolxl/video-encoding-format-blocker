@@ -1,0 +1,20 @@
+{
+  "name": "video-encoding-format-blocker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Chrome / Edge extension for blocking selected video codec capability reporting on user-selected websites.",
+  "license": "MIT",
+  "scripts": {
+    "check": "node scripts/check-extension.mjs",
+    "package": "node scripts/package-extension.mjs"
+  },
+  "keywords": [
+    "chrome-extension",
+    "manifest-v3",
+    "video",
+    "codec",
+    "av1",
+    "vp9",
+    "hevc"
+  ]
+}
