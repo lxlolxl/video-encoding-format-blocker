@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Video Encoding Format Blocker</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div>
+        <h1 data-i18n="appTitle">Video Encoding Format Blocker</h1>
+        <p class="subtitle" data-i18n="subtitle">Block selected video codec capability reporting on chosen websites.</p>
+      </div>
+      <label class="language-row">
+        <span data-i18n="languageLabel">Language</span>
+        <select id="language">
+          <option value="en">English</option>
+          <option value="zh-TW">繁體中文</option>
+        </select>
+      </label>
+    </header>
+
+    <section class="card">
+      <label class="switch-row">
+        <input id="enabled" type="checkbox">
+        <span data-i18n="enabledLabel">Enable blocker on selected websites</span>
+      </label>
+    </section>
+
+    <section class="card">
+      <h2 data-i18n="formatsTitle">Blocked video formats</h2>
+      <div class="codec-grid">
+        <label class="codec-item">
+          <input id="codec-av1" type="checkbox" data-codec="av1">
+          <span>
+            <strong>AV1</strong>
+            <small data-i18n="av1Hint">Blocks av01 / AV1 capability checks.</small>
+          </span>
+        </label>
+        <label class="codec-item">
+          <input id="codec-vp9" type="checkbox" data-codec="vp9">
+          <span>
+            <strong>VP9</strong>
+            <small data-i18n="vp9Hint">Blocks vp09 / VP9 capability checks.</small>
+          </span>
+        </label>
+        <label class="codec-item">
+          <input id="codec-hevc" type="checkbox" data-codec="hevc">
+          <span>
+            <strong>H.265 / HEVC</strong>
+            <small data-i18n="hevcHint">Blocks hvc1 / hev1 and HEVC-based Dolby Vision identifiers.</small>
+          </span>
+        </label>
+      </div>
+      <p class="hint" data-i18n="formatHint">Default is AV1 only. Blocking too many formats may force lower quality or make some videos unavailable.</p>
+    </section>
+
+    <section class="card">
+      <h2 data-i18n="sitesTitle">Target websites</h2>
+      <textarea id="patterns" spellcheck="false" aria-label="Target websites"></textarea>
+      <p class="hint">
+        <span data-i18n="patternHint1">Use Chrome match patterns, one per line.</span><br>
+        <code>*://*.netflix.com/*</code> <code>*://*.youtube.com/*</code>
+      </p>
+      <div class="button-row">
+        <button id="defaults" type="button" data-i18n="defaultsButton">Restore defaults</button>
+        <button id="yt" type="button" data-i18n="youtubeButton">YouTube only</button>
+        <button id="nf" type="button" data-i18n="netflixButton">Netflix only</button>
+        <button id="yt-nf" type="button" data-i18n="youtubeNetflixButton">YouTube + Netflix</button>
+      </div>
+    </section>
+
+    <section class="card warning">
+      <h2 data-i18n="permissionTitle">Permission note</h2>
+      <p data-i18n="permissionText">When saving, Chrome may ask for permission to run on the patterns you entered. The extension only registers scripts on the sites listed above.</p>
+    </section>
+
+    <div class="footer-actions">
+      <button id="save" class="primary" type="button" data-i18n="saveButton">Save and register</button>
+      <span id="status" class="status" role="status" aria-live="polite"></span>
+    </div>
+  </main>
+
+  <script src="options.js"></script>
+</body>
+</html>
