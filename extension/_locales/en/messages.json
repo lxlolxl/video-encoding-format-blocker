@@ -1,0 +1,10 @@
+{
+  "extName": {
+    "message": "Video Encoding Format Blocker",
+    "description": "Extension name"
+  },
+  "extDescription": {
+    "message": "Disable selected video codec capability reporting on user-selected websites.",
+    "description": "Extension description"
+  }
+}
