@@ -1,0 +1,11 @@
+Video Encoding Format Blocker
+Copyright (c) 2026 尺灰 三 and contributors
+Licensed under the MIT License.
+
+This project contains no third-party runtime libraries.
+
+Implementation notes:
+- The extension uses standard Chrome Extension Manifest V3 APIs.
+- The codec-blocking behavior is implemented by overriding media capability
+  detection APIs in the page's MAIN JavaScript world at document_start.
+- The source code in this repository was written independently for this project.
