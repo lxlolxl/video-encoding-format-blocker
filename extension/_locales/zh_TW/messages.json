@@ -1,0 +1,10 @@
+{
+  "extName": {
+    "message": "Video Encoding Format Blocker",
+    "description": "Extension name"
+  },
+  "extDescription": {
+    "message": "在指定網站停用所選影片編碼格式的支援回報。",
+    "description": "Extension description"
+  }
+}
